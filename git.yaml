@@ -1,11 +1,11 @@
 ---
 - hosts: webservers
-  remote_user: ansible
+  remote_user: ansible2
   become: yes
   tasks:
     - name: create a folder example
       file: 
-         path: /home/ansible/example
+         path: /home/ansible2/example
          state: directory
          mode: '0777'
 
@@ -13,5 +13,5 @@
     - name: download warfile
       ansible.builtin.git: 
          repo: 'https://github.com/dheerajkolla/addressbook.war.git'
-         dest: /home/ansible/example
+         dest: /home/ansible2/example
 
